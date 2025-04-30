@@ -29,7 +29,7 @@ def main(host, port):
         agent_card = AgentCard(
             name="OpenAI Translator Agent",
             description="Translate text from English to Spanish, French or Italian",
-            url=f"http://{host}:{port}/",
+            url= os.getenv("PROXY_URL", f"http://{host}:{port}/"),
             version="0.1.0",
             defaultInputModes=A2AWrapperAgent.SUPPORTED_CONTENT_TYPES,
             defaultOutputModes=A2AWrapperAgent.SUPPORTED_CONTENT_TYPES,
